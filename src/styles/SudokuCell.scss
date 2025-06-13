@@ -1,0 +1,75 @@
+@mixin sudokuGridBoxes($StartIndex, $EndIndex) {
+    @for $i from $StartIndex through $EndIndex {
+        .sudoku-grid> :nth-child(#{$i}) {
+            border-bottom: 3px solid #333;
+        }
+    }
+}
+
+@include sudokuGridBoxes(19, 27);
+@include sudokuGridBoxes(46, 54);
+
+.sudoku-cell:nth-child(3n + 0):not(:nth-child(9n)) {
+    border-right: 3px #333 solid;
+}
+
+.sudoku-cell {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #bbb;
+    box-sizing: border-box;
+    outline: none;
+    transition: background-color 0.2s ease;
+    color: #000;
+
+    &:hover {
+        background-color: #cfcccc;
+    }
+
+    &:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+
+}
+
+.conflict {
+    background-color: #ffe6e6;
+    border-color: #ff0000;
+    color: #ff0000;
+
+    &:focus {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    }
+
+    &:hover {
+        background-color: #ffcccc;
+    }
+}
+
+.block-even {
+    background-color: #f1f1f1;
+}
+
+.block-odd {
+    background-color: #ffffff;
+}
+
+.sudoku-cell.pre-filled {
+  font-weight: bold;
+  color: #333;      
+  background-color: #a3a0a0; 
+  cursor: default;   
+}
+
+.sudoku-cell.pre-filled.conflict {
+    background-color: #b87676; 
+    border-color: #bb4747;
+    color: #333;
+}
+.sudoku-cell.pre-filled:hover {
+    cursor: not-allowed;
+}
