@@ -68,20 +68,16 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/MohammadAliJa/navybits-sudoku-challenge](https://github.com/MohammadAliJa/navybits-sudoku-challenge)
+    git clone https://github.com/MohammadAliJa/navybits-sudoku-challenge
     cd navybits-sudoku-challenge
     ```
 
 2.  **Install dependencies:**
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
 #### Running the Application
 
 ```bash
 npm start
-# or
-yarn start
