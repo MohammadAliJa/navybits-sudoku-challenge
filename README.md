@@ -80,4 +80,4 @@ To run this project locally, follow these steps:
 #### Running the Application
 
 ```bash
-npm start
+npm run dev
