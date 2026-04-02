@@ -22,12 +22,12 @@ Throughout the development of the Sudoku Challenge, I encountered several intere
 
 #### **1. Ensuring Unique Sudoku Puzzle Solutions**
 
-* **Challenge:** When generating puzzles by removing numbers from a solved board, it's crucial that the resulting puzzle has only one unique solution. Randomly removing numbers can often lead to puzzles with multiple valid solutions, which isn't ideal for a classic Sudoku game.
+* **Challenge:** When generating puzzles by removing numbers from a solved board, the resulting puzzle must have only one unique solution. Randomly removing numbers can often lead to puzzles with multiple valid solutions, which isn't ideal for a classic Sudoku game.
 * **Solution:** I implemented a `countSolutions` function that utilizes a modified backtracking algorithm. This function attempts to find all possible solutions for a given board and stops as soon as it finds more than one. If `countSolutions` returns anything other than `1` after removing a cell, that cell's original value is restored, ensuring the puzzle remains uniquely solvable.
 
 #### **2. Synchronizing State and Conditional Logic for Manual Input Mode**
 
-* **Challenge:** Differentiating between a pre-generated puzzle and a user-entered (manual) puzzle, especially concerning which cells are editable, when to show solution mismatches, and how hints should behave. Initially, `solutionMismatchConflicts` would appear immediately in manual mode, which was incorrect as there was no solution to compare against yet.
+* **Challenge:** Differentiating between a pre-generated puzzle and a user-entered (manual) puzzle, especially concerning which cells are editable, when to show solution mismatches, and how hints should behave. Initially, `solutionMismatchConflicts` would appear immediately in manual mode, which was incorrect, as there was no solution to compare against yet.
 * **Solution:**
     * Introduced an `isManualInputMode` state to control the application's behavior.
     * The `solution` state is explicitly cleared (set to an empty board) when entering manual input mode, preventing premature solution mismatch conflicts.
@@ -68,8 +68,8 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/MohammadAliJa/navybits-sudoku-challenge
-    cd navybits-sudoku-challenge
+    git clone https://github.com/MohammadAliJa/sudoku-game-web
+    cd sudoku-game-web
     ```
 
 2.  **Install dependencies:**
